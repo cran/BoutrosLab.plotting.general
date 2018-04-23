@@ -1,0 +1,81 @@
+# exportPattern("^[[:alpha:]]+")
+import( 
+	"cluster", 
+	"hexbin", 
+	"lattice",
+  	"latticeExtra",
+	"grid"
+	);
+export(
+	"append.footnote",
+	"auto.axis",
+	"colour.gradient",
+	"covariates.grob",
+	"create.colourkey",
+	"create.barplot",
+	"create.boxplot",
+	"create.colourkey",
+	"create.dendrogram",
+	"create.densityplot",
+	"create.dotmap",
+	"create.gif",
+	"create.heatmap",
+	"create.hexbinplot",
+	"create.histogram",
+	"create.lollipopplot",
+	"create.manhattanplot",
+	"create.multiplot",
+	"create.multipanelplot",
+	"create.polygonplot",
+	"create.qqplot.fit",
+	"create.qqplot.comparison",
+	"create.scatterplot",
+	"create.segplot",
+	"create.stripplot",
+	"create.violinplot",
+	"default.colours",
+	"display.colours",
+	"display.statistical.result",
+	"thousands.split",
+	"force.colour.scheme",
+	"generate.at.final",
+	"get.corr.key",
+	"get.defaults",
+	"get.line.breaks",
+	"legend.grob",
+	"pcawg.colours",
+	"scientific.notation",
+	"show.available.palettes",
+	"write.metadata",
+	"write.plot"
+	);
+importFrom("grDevices", "col2rgb", "colorRamp", "colorRampPalette",
+             "dev.cur", "dev.list", "dev.off", "grey", "ps.options",
+             "rgb", "setEPS", "colours", "png", "cairo_pdf", "postscript", "svg", "tiff");
+importFrom("graphics", "abline", "par", "plot.new", "rect",
+             "strheight", "strwidth", "text");
+importFrom("stats", "as.dendrogram", "as.dist", "as.formula",
+             "as.hclust", "coef", "cor", "dendrapply", "density",
+             "hclust", "is.leaf", "lm", "loess", "median", "model.frame",
+             "order.dendrogram", "predict", "pt", "qnorm", "update", "sd");
+importFrom("utils", "packageVersion", "read.table", "stack", "tail", "write.table");
+importFrom("tools", "file_ext");
+importFrom("e1071","skewness");
+importFrom("gtable","gtable_add_grob");
+importFrom("gridExtra", "arrangeGrob");
+importFrom("MASS", "rlm");
+S3method(print, multipanel)
+S3method(plot, multipanel)
+useDynLib(BoutrosLab.plotting.general, .registration = TRUE)
+export(
+	"dist",
+	"recode.vector",
+	"GarbageCollect",
+	"save.session.profile",
+	"create.qqplot.fit.confidence.interval",
+	"get.correlation.p.and.corr",
+	"ls.objects",
+	"ks.test.critical.value",
+	"generate.filename");
+importFrom("stats", "cor.test", "ecdf", "ppoints", "quantile", "uniroot")
+importFrom("utils", "capture.output", "head", "object.size", "sessionInfo")
