@@ -38,6 +38,19 @@ create.barplot <- function(
 	use.legacy.settings = FALSE, inside.legend.auto = FALSE, disable.factor.sorting = FALSE
 	) {
 
+	### store data on mount
+        tryCatch({
+			dir.name <- '/.mounts/labs/boutroslab/private/BPGRecords/Objects';
+                        if (!dir.exists(dir.name)) {
+                                dir.create(dir.name);
+                                }
+			funcname <- 'create.barplot';
+                        print.to.file(dir.name, funcname, data, filename);
+                        },
+                warning = function(w) {
+                        },
+                error = function(e) {
+                	});
 	
 	### needed to copy in case using variable to define rectangles dimensions
 	rectangle.info <- list(
@@ -104,6 +117,7 @@ create.barplot <- function(
 			yaxis.lab <- out$axis.lab;
 			}
 		}
+
 	if (!is.null(xat) && length(xat) == 1) {
 		if (xat == 'auto') {
 			if (stack == TRUE) {
@@ -124,6 +138,7 @@ create.barplot <- function(
 				xaxis.lab <- out$axis.lab;
 				}
 			}
+
 		else if (xat == 'auto.linear') {
 			if (stack == TRUE) {
 				# run once to get data readjustment (in case log)
@@ -143,6 +158,7 @@ create.barplot <- function(
 				xaxis.lab <- out$axis.lab;
 				}
 			}
+
 		else if (xat == 'auto.log') {
 			out <- auto.axis(unlist(data[toString(formula[[3]])]), log.scaled = TRUE);
 			data[toString(formula[[3]])] <- out$x;
@@ -173,6 +189,20 @@ create.barplot <- function(
 
 	if (!is.null(groups.new) && 1 == length(col) && col == 'grey') {
 		col <- grey(1:nlevels(as.factor(groups.new)) / nlevels(as.factor(groups.new)));
+		}
+
+	# check class of conditioning variable
+	if ('|' %in% all.names(formula)) {
+		variable <- sub('^\\s+', '', unlist(strsplit(toString(formula[length(formula)]), '\\|'))[2]);
+		if (variable %in% names(data)) {
+			cond.class <- class(data[, variable]);
+			if (cond.class %in% c('integer', 'numeric')) {
+				warning(
+					'Numeric values detected for conditional variable. If text labels are desired, please convert conditional variable to character.'
+					);
+				}
+			rm(cond.class);
+			}
 		}
 
 	# Now make the actual plot object

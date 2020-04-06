@@ -324,7 +324,6 @@ If this function is called without capturing the return value, or specifying a f
 }
 \seealso{\code{\link[lattice]{xyplot}}, \code{\link[lattice]{lattice}} or the Lattice book for an overview of the package.}
 \examples{
-\dontrun{
 set.seed(12345);
 lollipop.data <- data.frame(
     y = seq(1,100,1),
@@ -332,7 +331,7 @@ lollipop.data <- data.frame(
     );
 
 create.lollipopplot(
-    filename = paste0(tempdir(),"/Lollipop_Simple.tiff"),
+    filename = tempfile(pattern = 'Lollipop_Simple', fileext = '.tiff'),
     formula = x ~ y,
     data = lollipop.data,
     main = 'Lollipop plot',
@@ -352,6 +351,5 @@ create.lollipopplot(
     regions.labels = c("test 1", "test2", "test 3"),
     regions.color = c("#66b3ff", "#5cd65c", "#ff3333")
     );
-}
 }
 \keyword{hplot}

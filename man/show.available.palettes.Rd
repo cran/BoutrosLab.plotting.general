@@ -21,21 +21,18 @@ show.available.palettes(
 
 \author{Christine P'ng}
 \examples{
-
-\dontrun{
 show.available.palettes(
-	filename = paste0(tempdir(),'/show_case_specific_schemes.tiff'),
+	filename = tempfile(pattern = 'show_case_specific_schemes', fileext = '.tiff'),
 	type = 'specific',
 	width = 10
 	);
 
 show.available.palettes(
-	filename = paste0(tempdir(),'/default_schemes.tiff'),
+	filename = tempfile(pattern = 'default_schemes', fileext = '.tiff'),
 	type = 'general',
 	height = 6,
 	width = 8
 	);
-}
 }
 \keyword{colour}
 \keyword{scheme}

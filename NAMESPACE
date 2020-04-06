@@ -1,5 +1,7 @@
-# exportPattern("^[[:alpha:]]+")
-import( 
+useDynLib("BoutrosLab.plotting.general", .registration = TRUE)
+
+import(
+	"MASS", 
 	"cluster", 
 	"hexbin", 
 	"lattice",
@@ -7,7 +9,6 @@ import(
 	"grid"
 	);
 export(
-	"append.footnote",
 	"auto.axis",
 	"colour.gradient",
 	"covariates.grob",
@@ -29,6 +30,7 @@ export(
 	"create.polygonplot",
 	"create.qqplot.fit",
 	"create.qqplot.comparison",
+	"create.qqplot.fit.confidence.interval",
 	"create.scatterplot",
 	"create.segplot",
 	"create.stripplot",
@@ -36,12 +38,15 @@ export(
 	"default.colours",
 	"display.colours",
 	"display.statistical.result",
+	"dist",
 	"thousands.split",
 	"force.colour.scheme",
 	"generate.at.final",
 	"get.corr.key",
+	"get.correlation.p.and.corr",
 	"get.defaults",
 	"get.line.breaks",
+	"ks.test.critical.value",
 	"legend.grob",
 	"pcawg.colours",
 	"scientific.notation",
@@ -55,27 +60,14 @@ importFrom("grDevices", "col2rgb", "colorRamp", "colorRampPalette",
 importFrom("graphics", "abline", "par", "plot.new", "rect",
              "strheight", "strwidth", "text");
 importFrom("stats", "as.dendrogram", "as.dist", "as.formula",
-             "as.hclust", "coef", "cor", "dendrapply", "density",
+             "as.hclust", "coef", "cor", "cor.test", "dendrapply", "density", "ecdf",
              "hclust", "is.leaf", "lm", "loess", "median", "model.frame",
-             "order.dendrogram", "predict", "pt", "qnorm", "update", "sd");
+             "order.dendrogram", "ppoints", "predict", "pt", "qnorm", "quantile", "uniroot", "update", "sd");
 importFrom("utils", "packageVersion", "read.table", "stack", "tail", "write.table");
 importFrom("tools", "file_ext");
 importFrom("e1071","skewness");
 importFrom("gtable","gtable_add_grob");
 importFrom("gridExtra", "arrangeGrob");
-importFrom("MASS", "rlm");
 S3method(print, multipanel)
 S3method(plot, multipanel)
-useDynLib(BoutrosLab.plotting.general, .registration = TRUE)
-export(
-	"dist",
-	"recode.vector",
-	"GarbageCollect",
-	"save.session.profile",
-	"create.qqplot.fit.confidence.interval",
-	"get.correlation.p.and.corr",
-	"ls.objects",
-	"ks.test.critical.value",
-	"generate.filename");
-importFrom("stats", "cor.test", "ecdf", "ppoints", "quantile", "uniroot")
-importFrom("utils", "capture.output", "head", "object.size", "sessionInfo")
+

@@ -11,7 +11,7 @@
 
 ### FUNCTION TO SET COLOUR SCHEMES ################################################################
 force.colour.scheme <- force.color.scheme <- function(
-	x, scheme, fill.colour = 'slategrey', include.names = FALSE, return.factor = FALSE, return.scheme = FALSE
+	x = NA, scheme, fill.colour = 'slategrey', include.names = FALSE, return.factor = FALSE, return.scheme = FALSE
 	) {
 
 	# some error checking
@@ -34,6 +34,7 @@ force.colour.scheme <- force.color.scheme <- function(
 			}
 		x <- x.processed;
 		}
+
 	else if (scheme == 'age.categorical.default') {
 		x.processed <- x;
 		if (length(grep(x = x, '-|>|<')) == 0) {
@@ -50,6 +51,7 @@ force.colour.scheme <- force.color.scheme <- function(
                         }
 		x <- x.processed;
 		}
+
 	else if (scheme == 'age.categorical.prostate') {
 		x.processed <- x;
 		if (length(grep(x = x, '-|>|<')) == 0) {
@@ -67,6 +69,7 @@ force.colour.scheme <- force.color.scheme <- function(
                         }
 		x <- x.processed;
 		}
+
 	else if (scheme == 'age.gradient') {
 		x[x < 40] <- 40;
         	x[x > 70] <- 70;
@@ -79,12 +82,12 @@ force.colour.scheme <- force.color.scheme <- function(
         	my.palette <- rgb(colour.function(colour.x), maxColorValue = 255);
 		return(my.palette);
 		}
+
 	else if (scheme == 'psa.gradient') {
 		x[x < 0] <- 0;
         	x[x > 20] <- 20;
 
         	x <- x / 20.0;
-
 
         	colour.scheme <- c('white', 'darkred');
         	colour.function <- colorRamp(colour.scheme, space = 'rgb');
@@ -93,6 +96,7 @@ force.colour.scheme <- force.color.scheme <- function(
 
         	return(my.palette);
 		}
+
 	else if (scheme == 'heteroplasmy') {
                 x.processed <- x;
                 x <- as.numeric(x);
@@ -103,6 +107,7 @@ force.colour.scheme <- force.color.scheme <- function(
                 x.processed[x >= 0.6 & x <= 1] <- '3';
                 x <- x.processed;
                 }
+
 	else if (scheme == 'mt.annotation') {
                 x.processed <- x;
                 x.processed[grepl('MT-T', x.processed)] <- 'MT-T';
@@ -111,6 +116,7 @@ force.colour.scheme <- force.color.scheme <- function(
                 x.processed[grepl('MT-OL', x.processed)] <- 'MT-OL';
 		x <- x.processed;
                 }
+
 	# Set all input to lower case
 	x <- tolower(x);
 	scheme <- tolower(scheme);
@@ -286,12 +292,12 @@ force.colour.scheme <- force.color.scheme <- function(
 	mt.annotation.7 <- '#FFFF78';
 	mt.annotation.8 <- 'white';
 	
-	#Gleason Group
-	gleason.group.1 <- 'cornsilk';
-        gleason.group.2 <- 'yellow';
-        gleason.group.3 <- 'orange';
-        gleason.group.4 <- 'maroon3';
-        gleason.group.5 <- 'red';
+	#ISUP Grade
+	isup.grade.1 <- 'cornsilk';
+        isup.grade.2 <- 'yellow';
+        isup.grade.3 <- 'orange';
+        isup.grade.4 <- 'maroon3';
+        isup.grade.5 <- 'red';
 
 	# irregular spacing is used here to allow for visual mapping between colours and corresponding values
 	avail.schemes <- list(
@@ -424,9 +430,9 @@ force.colour.scheme <- force.color.scheme <- function(
 				mt.annotation.6, mt.annotation.6, mt.annotation.6, mt.annotation.7, mt.annotation.7, mt.annotation.7,
 				mt.annotation.5, mt.annotation.8, mt.annotation.8)
 			),
-                gleason.group = list(
-			levels = c('1','2','3','4','5'),
-			colours = c(gleason.group.1, gleason.group.2, gleason.group.3, gleason.group.4, gleason.group.5)
+                isup.grade = list(
+			levels = c('1', '2', '3', '4', '5'),
+			colours = c(isup.grade.1, isup.grade.2, isup.grade.3, isup.grade.4, isup.grade.5)
 			)
 		);
 

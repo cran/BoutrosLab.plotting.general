@@ -34,8 +34,6 @@ write.plot(
 \author{Paul C. Boutros}
 \keyword{iplot}
 \examples{
-
-\dontrun{
 set.seed(253647)
 # create test data
 tmp.data <- data.frame(
@@ -81,7 +79,7 @@ secondary.plot <- create.densityplot(
     );
 
 write.plot(
-    filename = paste0(tempdir(),'/write_plot_example.tiff'),
+    filename = tempfile(pattern = 'write_plot_example', fileext = '.tiff'),
     trellis.object = main.plot,
     additional.trellis.objects = list(secondary.plot),
     additional.trellis.locations = list(
@@ -92,5 +90,4 @@ write.plot(
         ),
     resolution = 50 # Lowering resolution decreases file size
     );
-}
 }

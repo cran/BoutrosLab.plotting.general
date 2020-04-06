@@ -30,15 +30,13 @@
 \author{Christine P'ng}
 
 \examples{
-
-\dontrun{
 # use sample to set colour scheme
 sex.colours <- replace(as.vector(patient$sex), which(patient$sex == 'male'),'dodgerblue');
 sex.colours <- replace(sex.colours, which(patient$sex == 'female'), 'pink');
 len <- apply(SNV[1:15], 2, function(x){mutation.count <- length(which(x == 1))});
 
 create.barplot(
-    filename = paste0(tempdir(),'/Using_patient_dataset.tiff'),
+    filename = tempfile(pattern = 'Using_patient_dataset', fileext = '.tiff'),
     formula = len ~ colnames(SNV[1:15]) ,
     data = SNV,
     main = 'patient dataset',
@@ -49,5 +47,5 @@ create.barplot(
     description = 'Barplot created by BoutrosLab.plotting.general'
     );
 }
-}
+
 \keyword{datasets}

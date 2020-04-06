@@ -256,8 +256,6 @@ If this function is called without capturing the return value, or specifying a f
 }
 \seealso{\code{\link[lattice]{xyplot}}, \code{\link[lattice]{lattice}} or the Lattice book for an overview of the package.}
 \examples{
-
-\dontrun{
 set.seed(12345);
 
 temp  <- matrix(runif(1010), ncol = 10) + sort(runif(101));
@@ -269,7 +267,7 @@ simple.data <- data.frame(
     );
 
 create.polygonplot(
-    filename = paste0(tempdir(),'/Polygon_Simple.tiff'),
+    filename = tempfile(pattern = 'Polygon_Simple', fileext = '.tiff'),
     formula = NA ~ x,
     data = simple.data,
     max = simple.data$max,
@@ -278,7 +276,8 @@ create.polygonplot(
     xlimits = c(0,100),
     ylimits = c (0,2),
     col = default.colours(1),
-    description = 'Polygon created by BoutrosLab.plotting.general'
+    description = 'Polygon created by BoutrosLab.plotting.general',
+    resolution = 100
     );
 
 # Compare two genes across increasing numbers of samples
@@ -326,7 +325,7 @@ polygon.data.two.genes <- rbind(
 
 # Minimal Input
 create.polygonplot(
-    filename = paste0(tempdir(),'/Polygon_Minimal_Input.tiff'),
+    filename = tempfile(pattern = 'Polygon_Minimal_Input', fileext = '.tiff'),
     formula = NA ~ x,
     data = polygon.data.gene1,
     max = polygon.data.gene1$max,
@@ -334,12 +333,13 @@ create.polygonplot(
     main = 'Minimal input',
     xlimits = c(0,58),
     ylimits = c (2,5),
-    description = 'Polygon created by BoutrosLab.plotting.general'
+    description = 'Polygon created by BoutrosLab.plotting.general',
+    resolution = 100
     );
 
 # Axes & Labels
 create.polygonplot(
-    filename = paste0(tempdir(),'/Polygon_Axes_Labels.tiff'),
+    filename = tempfile(pattern = 'Polygon_Axes_Labels', fileext = '.tiff'),
     formula = NA ~ x,
     data = polygon.data.gene1,
     max = polygon.data.gene1$max,
@@ -358,12 +358,13 @@ create.polygonplot(
     yaxis.fontface = 1,
     xat = seq(0, 58, 5),
     yat = seq(0, 10, 2),
-    description = 'Polygon created by BoutrosLab.plotting.general'
+    description = 'Polygon created by BoutrosLab.plotting.general',
+    resolution = 100
     );
 
 # Colour
 create.polygonplot(
-    filename = paste0(tempdir(),'/Polygon_Colour.tiff'),
+    filename = tempfile(pattern = 'Polygon_Colour', fileext = '.tiff'),
     formula = NA ~ x,
     data = polygon.data.gene1,
     max = polygon.data.gene1$max,
@@ -383,12 +384,13 @@ create.polygonplot(
     yat = seq(0, 10, 2),
     # Colour
     col = default.colours(1),
-    description = 'Polygon created by BoutrosLab.plotting.general'
+    description = 'Polygon created by BoutrosLab.plotting.general',
+    resolution = 100
     );
 
 # Add median line and points
 create.polygonplot(
-    filename = paste0(tempdir(),'/Polygon_Median_Points.tiff'),
+    filename = tempfile(pattern = 'Polygon_Median_Points', fileext = '.tiff'),
     formula = NA ~ x,
     data = polygon.data.gene1,
     max = polygon.data.gene1$max,
@@ -412,12 +414,14 @@ create.polygonplot(
     col = default.colours(1),
     # border points
     add.xy.border = TRUE,
-    description = 'Polygon created by BoutrosLab.plotting.general'
+    description = 'Polygon created by BoutrosLab.plotting.general',
+    resolution = 100
     );
 
+\donttest{
 # Additional Data
 create.polygonplot(
-    filename = paste0(tempdir(),'/Polygon_Extra_Data.tiff'),
+    filename = tempfile(pattern = 'Polygon_Extra_Data', fileext = '.tiff'),
     formula = NA ~ x,
     # divide data
     groups = set,
@@ -441,12 +445,13 @@ create.polygonplot(
     yat = seq(0, 14, 2),
     # Increasing number of colours
     col = default.colours(2),
-    description = 'Polygon created by BoutrosLab.plotting.general'
+    description = 'Polygon created by BoutrosLab.plotting.general',
+    resolution = 100
     );
 
 # Legend
 create.polygonplot(
-    filename = paste0(tempdir(),'/Polygon_Legend.tiff'),
+    filename = tempfile(pattern = 'Polygon_Legend', fileext = '.tiff'),
     formula = NA ~ x,
     groups = set,
     data = polygon.data.two.genes,
@@ -485,12 +490,13 @@ create.polygonplot(
         padding.text = 3,
         columns = 1
         ),
-    description = 'Polygon created by BoutrosLab.plotting.general'
+    description = 'Polygon created by BoutrosLab.plotting.general',
+    resolution = 200
     );
 
 # Panel Organiation
 create.polygonplot(
-    filename = paste0(tempdir(),'/Polygon_Panel.tiff'),
+    filename = tempfile(pattern = 'Polygon_Panel', fileext = '.tiff'),
     # divide data
     formula = NA ~ x | set,
     data = polygon.data.two.genes,
@@ -512,12 +518,13 @@ create.polygonplot(
     xat = seq(0, 58, 5),
     yat = seq(0, 14, 2),
     col = default.colours(1),
-    description = 'Polygon created by BoutrosLab.plotting.general'
+    description = 'Polygon created by BoutrosLab.plotting.general',
+    resolution = 200
     );
 
 # Extra Points
 create.polygonplot(
-    filename = paste0(tempdir(),'/Polygon_Extra_Points.tiff'),
+    filename = tempfile(pattern = 'Polygon_Extra_Points', fileext = '.tiff'),
     formula = NA ~ x,
     groups = set,
     data = polygon.data.two.genes,
@@ -565,12 +572,13 @@ create.polygonplot(
     extra.points.pch = 3,
     extra.points.type = c('p', 'l'),
     extra.points.cex = 0.7,
-    description = 'Polygon created by BoutrosLab.plotting.general'
+    description = 'Polygon created by BoutrosLab.plotting.general',
+    resolution = 200
     );
 
 # Nature style
 create.polygonplot(
-    filename = paste0(tempdir(),'/Polygon_Nature_style.tiff'),
+    filename = tempfile(pattern = 'Polygon_Nature_style', fileext = '.tiff'),
     formula = NA ~ x,
     groups = set,
     data = polygon.data.two.genes,
@@ -617,7 +625,8 @@ create.polygonplot(
     # demonstrating how to create en-dashes
     xlab.label = expression(paste('en dashs: 1','\u2013', '10'^'\u2013', ''^3)),
 
-    description = 'Polygon created by BoutrosLab.plotting.general'
+    description = 'Polygon created by BoutrosLab.plotting.general',
+    resolution = 1200
     );
 }
 }

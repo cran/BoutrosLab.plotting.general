@@ -1,3 +1,88 @@
+--------------------------------------------------------------------------
+BoutrosLab.plotting.general 6.0.0 2020-04-01
+
+UPDATE
+* Updated contact email
+* Included source code previously imported from BoutrosLab.dist.overload
+  and BoutrosLab.statistics.general
+* Fixed resolutions for examples to reduce running time
+* Added \donttest{} to examples that took >5 seconds to run
+* Examples now output plots to tempdir()
+
+BUG
+* Fixed errors in create.multiplot and create.multipanel that wasn't
+  passing CRAN's check by changing 'is.na' to 'anyNA'
+* Fixed errors in create.multiplot that was only checking the first
+  element in a list by using 'is.element' instead of '=='
+* Fixed spacing issue in PlottingGuide
+* Added stringsAsFactors = TRUE to data.frame() calls in examples
+  (Changes to R-devel in 2020-03-04 changed the defaults)
+* Fixed thousands.splits to return a vector instead of a list
+* Fixed write.metadata to use double quotes on system calls, correctly
+  show BL.plotting.survival version and consolidate exiftool calls
+  to speed things up
+* Fixed CRAN error misuse of package= for PACKAGE=
+
+REMOVED
+* Removed BoutrosLab.utilities::recode.vector calls in examples
+* Removed requirements for BoutrosLab.utilities, BoutrosLab.dist.overload,
+  BoutrosLab.statistics.general
+
+--------------------------------------------------------------------------
+BoutrosLab.plotting.general 5.9.8 2018-10-16
+
+FEATURE
+# create.hexbinplot: added option to modify the default legend title
+
+--------------------------------------------------------------------------
+BoutrosLab.plotting.general 5.9.7 2018-09-19
+
+BUG
+# fixed an issue regarding warning detection for class of conditioning variable that didn't recognize character input (barplot, boxplot, hexbinplot, scatterplot)
+
+--------------------------------------------------------------------------
+BoutrosLab.plotting.general 5.9.6 2018-07-24
+
+BUG
+* fixed an issue that prevented extra points from plotting correctly in create.polygonplot
+
+--------------------------------------------------------------------------
+BoutrosLab.plotting.general 5.9.5 2018-06-05
+
+FEATURE
+* added warnings when a formula contains a conditioning variable that is an integer/numeric (barplot, boxplot, hexbinplot, scatterplot)
+* changed default xaxis.tck for boxplot to prevent automatic ticks from appearing at top of plot
+
+BUG
+* force.colour.scheme no longer requires 'x' when return.scheme = TRUE
+* fixed an error in create.scatterplot preventing automatic axis determination when all y == 0 or all y == -N
+
+REMOVED
+* removed append.footnote.R as it was non-functional with no plans to fix
+
+--------------------------------------------------------------------------
+BoutrosLab.plotting.general 5.9.4 2018-04-18
+
+FEATURE
+* dotmap can now do symmetrical removing of top left half of dotmap 
+
+BUG
+* top covariates in heatmap now have proper defaults
+
+--------------------------------------------------------------------------
+
+BoutrosLab.plotting.general 5.9.3 2018-04-18
+
+FEATURE
+* updated dependencies to not include as many
+* boxplot now saves all its data (for later use)
+* multipanelplot now saves temp plots to temp dir 
+
+BUG
+* Default.colours no longer references wrong grey scale colour
+
+--------------------------------------------------------------------------
+
 BoutrosLab.plotting.general 5.9.2 2018-04-10
 
 FEATURE

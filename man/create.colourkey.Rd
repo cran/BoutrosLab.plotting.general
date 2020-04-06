@@ -38,8 +38,6 @@ create.colourkey(
 \keyword{xyplot}
 \seealso{xyplot, plotmath}
 \examples{
-
-\dontrun{
 set.seed(1234567890);
 x <- outer(-5:5, -5:5, '*') + matrix(nrow = 11, ncol = 11, data = runif(11 * 11));
 colnames(x) <- paste('col', 1:11, sep = '-');
@@ -68,7 +66,7 @@ barplot1 <- create.barplot(
 
 create.multiplot(
     plot.objects = list(heatmap1, barplot1),
-    filename = paste0(tempdir(),'/multiplot_with_colourkey.tiff'),
+    filename = tempfile(pattern = 'multiplot_with_colourkey', fileext = '.tiff'),
     plot.layout = c(2,1),
     panel.widths = c(2,1),
     yat = list(1:nrow(y), NULL),
@@ -94,5 +92,4 @@ create.multiplot(
     height = 8,
     resolution = 500
     );
-}
 }

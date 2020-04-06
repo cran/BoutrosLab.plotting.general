@@ -5,7 +5,7 @@
 \description{Takes a vector of character strings and an scheme returns the matching colours as a vector.}
 \usage{
 force.colour.scheme(
-	x,
+	x = NA,
 	scheme,
 	fill.colour = 'slategrey',
 	include.names = FALSE,
@@ -14,7 +14,7 @@ force.colour.scheme(
 	);
 }
 \arguments{
-    \item{x}{The input character or numeric vector}
+    \item{x}{The input character or numeric vector, defaults to NA incase return.scheme = TRUE.}
     \item{scheme}{A string representing a predefined scheme. Available schemes are: 
         \dQuote{annovar.annotation}, \dQuote{annovar.annotation.collapsed}, 
         \dQuote{annovar.annotation.collapsed2}, \dQuote{tissue}, \dQuote{sex}, \dQuote{stage}, 
@@ -283,6 +283,14 @@ force.colour.scheme(
         \item{MT-OL*}
         }
 
+    isup.grade 
+    \itemize{
+        \item{1}
+        \item{2}
+        \item{3}
+        \item{4}
+        \item{5} 
+    }
 
     
 

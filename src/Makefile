@@ -2,7 +2,7 @@ C = gcc
 OPTS = -c -fPIC
 LOADER = gcc
 
-SOURCES_C = distance.c ks.c BoutrosLab.plotting.general_init.c
+SOURCES_C = ks.c init.c distance.c
 DEPENDS = $(SOURCES_C:.c=.d)
 OBJECTS = $(SOURCES_C:.c=.o) 
 

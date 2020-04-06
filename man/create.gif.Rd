@@ -20,7 +20,6 @@ create.gif(
 \author{Jeffrey Green}
 \seealso{\code{\link[lattice]{stripplot}}, \code{\link[lattice]{lattice}} or the Lattice book for an overview of the package.}
 \examples{
-\dontrun{
 set.seed(223);
 
 simple.data1 <- data.frame(
@@ -49,7 +48,7 @@ create.gif(
 	parameters = p, 
 	number.of.frames = 3, 
 	delay = 20, 
-	filename = paste0(tempdir(),'/test.gif')
+	filename = tempfile(pattern = 'test', fileext = '.gif')
 	) 
-}
+
 }

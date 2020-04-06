@@ -31,11 +31,10 @@
 \author{Christine P'ng}
 
 \examples{
-\dontrun{
 len <- apply(SNV[1:15], 2, function(x){mutation.count <- length(which(x == 1))});
 
 create.barplot(
-    filename = paste0(tempdir(),'/Using_SNV_dataset.tiff'),
+    filename = tempfile(pattern = 'Using_SNV_dataset', fileext = '.tiff'),
     formula = len ~ colnames(SNV[1:15]) ,
     data = SNV,
     main = 'SNV dataset',
@@ -44,6 +43,5 @@ create.barplot(
     yat = seq(0,30,5),
     description = 'Barplot created by BoutrosLab.plotting.general'
     );
-}
 }
 \keyword{datasets}

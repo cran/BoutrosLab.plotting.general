@@ -162,8 +162,6 @@ If this function is called without capturing the return value, or specifying a f
 }
 \seealso{\code{\link[lattice]{bwplot}}, \code{\link[lattice]{lattice}} or the Lattice book for an overview of the package.}
 \examples{
-
-\dontrun{
 set.seed(12345);
 
 simple.data <- data.frame(
@@ -172,9 +170,10 @@ simple.data <- data.frame(
     );
 
 create.violinplot(
-    filename = paste0(tempdir(),'/Violinplot_Simple.tiff'),
+    filename = tempfile(pattern = 'Violinplot_Simple', fileext = '.tiff'),
     formula = x ~ y,
-    data = simple.data
+    data = simple.data,
+    resolution = 100
     );
 
 # load real datasets
@@ -186,17 +185,18 @@ violin.data <- data.frame(
 
 # Minimal input 
 create.violinplot(
-    filename = paste0(tempdir(),'/Violinplot_Minimal_Input.tiff'),
+    filename = tempfile(pattern = 'Violinplot_Minimal_Input', fileext = '.tiff'),
     formula = values ~ genes,
     data = violin.data,
     main = 'Minimal input',
     xaxis.rot = 90,
-    description = 'Violinplot created by BoutrosLab.plotting.general'
+    description = 'Violinplot created by BoutrosLab.plotting.general',
+    resolution = 100
     );
 
 # Axes & Labels
 create.violinplot(
-    filename = paste0(tempdir(),'/Violinplot_Axes_Labels.tiff'),
+    filename = tempfile(pattern = 'Violinplot_Axes_Labels', fileext = '.tiff'),
     formula = values ~ genes,
     data = violin.data,
     main = 'Axes & labels',
@@ -212,12 +212,13 @@ create.violinplot(
     ylab.label = 'Change in expression',
     xlab.cex = 1.5,
     ylab.cex = 1.5,
-    description = 'Violinplot created by BoutrosLab.plotting.general'
+    description = 'Violinplot created by BoutrosLab.plotting.general',
+    resolution = 100
     );
 
 # Range
 create.violinplot(
-    filename = paste0(tempdir(),'/Violinplot_Range.tiff'),
+    filename = tempfile(pattern = 'Violinplot_Range', fileext = '.tiff'),
     formula = values ~ genes,
     data = violin.data,
     main = 'Range',
@@ -236,12 +237,13 @@ create.violinplot(
     # Specify range
     start = 1,
     end = 10,
-    description = 'Violinplot created by BoutrosLab.plotting.general'
+    description = 'Violinplot created by BoutrosLab.plotting.general',
+    resolution = 100
     );
 
 # Scaling
 create.violinplot(
-    filename = paste0(tempdir(),'/Violinplot_Scale.tiff'),
+    filename = tempfile(pattern = 'Violinplot_Scale', fileext = '.tiff'),
     formula = values ~ genes,
     data = violin.data,
     main = 'Scale',
@@ -258,15 +260,17 @@ create.violinplot(
     ylab.cex = 1.5,
     # Scale
     scale = TRUE,
-    description = 'Violinplot created by BoutrosLab.plotting.general'
+    description = 'Violinplot created by BoutrosLab.plotting.general',
+    resolution = 100
     );
 
+\donttest{
 # Extra points
 median.points <- unlist(tapply(violin.data$values, violin.data$genes, median));
 top.points <- unlist(tapply(violin.data$values, violin.data$genes, quantile, 0.90));
 
 create.violinplot(
-    filename = paste0(tempdir(),'/Violinplot_Points.tiff'),
+    filename = tempfile(pattern = 'Violinplot_Points', fileext = '.tiff'),
     formula = values ~ genes,
     data = violin.data,
     main = 'Extra points',
@@ -286,12 +290,13 @@ create.violinplot(
     extra.points.pch = 21,
     extra.points.col = c('white','grey'),
     extra.points.cex = 0.5,
-    description = 'Violinplot created by BoutrosLab.plotting.general'
+    description = 'Violinplot created by BoutrosLab.plotting.general',
+    resolution = 100
     );
 
 # Colours
 create.violinplot(
-    filename = paste0(tempdir(),'/Violinplot_Colour.tiff'),
+    filename = tempfile(pattern = 'Violinplot_Colour', fileext = '.tiff'),
     formula = values ~ genes,
     data = violin.data,
     main = 'Colour',
@@ -312,12 +317,13 @@ create.violinplot(
     extra.points.cex = 0.5,
     # Colour
     col = 'dodgerblue',
-    description = 'Violinplot created by BoutrosLab.plotting.general'
+    description = 'Violinplot created by BoutrosLab.plotting.general',
+    resolution = 100
     );
 
 # Custom labels
 create.violinplot(
-    filename = paste0(tempdir(),'/Violinplot_Custom_Labels.tiff'),
+    filename = tempfile(pattern = 'Violinplot_Custom_Labels', fileext = '.tiff'),
     formula = values ~ genes,
     data = violin.data,
     main = 'Custom labels',
@@ -346,12 +352,13 @@ create.violinplot(
         expression(paste('2'^'4')),
         expression(paste('2'^'5'))
         ),
-    description = 'Violinplot created by BoutrosLab.plotting.general'
+    description = 'Violinplot created by BoutrosLab.plotting.general',
+    resolution = 100
     );
 
 # Orientation
 create.violinplot(
-    filename = paste0(tempdir(),'/Violinplot_Orientation.tiff'),
+    filename = tempfile(pattern = 'Violinplot_Orientation', fileext = '.tiff'),
     # switch formula
     formula = genes ~ values,
     data = violin.data,
@@ -372,12 +379,13 @@ create.violinplot(
     col = 'dodgerblue',
     # orientation
     plot.horizontal = TRUE,
-    description = 'Violinplot created by BoutrosLab.plotting.general'
+    description = 'Violinplot created by BoutrosLab.plotting.general',
+    resolution = 100
     );
 
 # background
 create.violinplot(
-    filename = paste0(tempdir(),'/Violinplot_Background.tiff'),
+    filename = tempfile(pattern = 'Violinplot_Background', fileext = '.tiff'),
     formula = values ~ genes,
     data = violin.data,
     main = 'Background rectangle',
@@ -405,12 +413,13 @@ create.violinplot(
     ytop.rectangle = 13,
     col.rectangle = 'grey',
     alpha.rectangle = 0.5,
-    description = 'Violinplot created by BoutrosLab.plotting.general'
+    description = 'Violinplot created by BoutrosLab.plotting.general',
+    resolution = 100
     );
 
 # Nature style
 create.violinplot(
-    filename = paste0(tempdir(),'/Violinplot_Nature_style.tiff'),
+    filename = tempfile(pattern = 'Violinplot_Nature_style', fileext = '.tiff'),
     formula = values ~ genes,
     data = violin.data,
     main = 'Nature style',
@@ -441,7 +450,8 @@ create.violinplot(
     # demonstrating how to create en-dashes
     xlab.lab = expression(paste('en dashs: 1','\u2013', '10'^'\u2013', ''^3)),
 
-    description = 'Violinplot created by BoutrosLab.plotting.general'
+    description = 'Violinplot created by BoutrosLab.plotting.general',
+    resolution = 200
     );
 }
 }

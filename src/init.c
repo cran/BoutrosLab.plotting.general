@@ -8,11 +8,11 @@
 */
 
 /* .Call calls */
-extern SEXP Cdist(SEXP, SEXP, SEXP, SEXP, SEXP);
+extern SEXP Cdist(SEXP, SEXP, SEXP, SEXP);
 extern SEXP pKolmogorov2x(SEXP, SEXP);
 
 static const R_CallMethodDef CallEntries[] = {
-    {"Cdist",         (DL_FUNC) &Cdist,         5},
+    {"Cdist",         (DL_FUNC) &Cdist,         4},
     {"pKolmogorov2x", (DL_FUNC) &pKolmogorov2x, 2},
     {NULL, NULL, 0}
 };

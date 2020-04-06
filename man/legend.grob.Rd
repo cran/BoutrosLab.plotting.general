@@ -52,7 +52,6 @@ The decision to use a grob (grid graphical object) to represent the legend was m
 An alternative method of creating the legend using the \code{barchart} function was tested, but it was unclear how to merge this barchart with the heatmap since the \code{c.trellis} function attempts to unify the format of the two images, and the use of viewports required that the plots be drawn, eliminating the possibility of suppressing output and saving the final graph as a trellis object.
 }
 \examples{
-\dontrun{
 # create list representing two legends
 legends1 <- list(
     legend = list(
@@ -72,7 +71,7 @@ legend.grob1 <- legend.grob(
     legends = legends1
     );
 tiff(
-    file.path(tempdir(),'legend_grob1.tiff'), 
+    filename = tempfile(pattern = 'legend_grob1', fileext = '.tiff'), 
     type = 'cairo', 
     width = 5, 
     height = 5, 
@@ -95,7 +94,7 @@ legend.grob2 <- legend.grob(
     layout = c(2,1)
     );
 tiff(
-    file.path(tempdir(),'legend_grob2.tiff'), 
+    filename = tempfile(pattern = 'legend_grob2', fileext = '.tiff'),
     type = 'cairo', 
     width = 5, 
     height = 5, 
@@ -127,7 +126,7 @@ legend.grob3 <- legend.grob(
     between.row = 3
     );
 tiff(
-    file.path(tempdir(),'legend_grob3.tiff'), 
+    filename = tempfile(pattern = 'legend_grob3', fileext = '.tiff'),
     type = 'cairo', 
     width = 5, 
     height = 5, 
@@ -158,7 +157,7 @@ legend.grob4 <- legend.grob(
     legends = legends3
     );
 tiff(
-    file.path(tempdir(),'legend_grob4.tiff'), 
+    filename = tempfile(pattern = 'legend_grob4', fileext = '.tiff'), 
     type = 'cairo', 
     width = 5, 
     height = 5, 
@@ -168,5 +167,4 @@ tiff(
     );
 grid.draw(legend.grob4);
 dev.off();
-}
 }

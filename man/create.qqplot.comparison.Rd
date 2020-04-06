@@ -161,25 +161,26 @@ create.qqplot.comparison(
 \seealso{\code{\link[lattice]{qq}}, \code{\link[lattice]{lattice}} or the Lattice book for an overview of the package.}
 \examples{
 
-\dontrun{
 set.seed(12345);
 
 create.qqplot.comparison(
-    filename = paste0(tempdir(),'/QQcomparison_Simple.tiff'),
-    x = list(rnorm(100), rnorm(100))
+    filename = tempfile(pattern = 'QQcomparison_Simple', fileext = '.tiff'),
+    x = list(rnorm(100), rnorm(100)),
+    resolution = 50
     );
 
 # Minimal Input
 create.qqplot.comparison(
-    filename = paste0(tempdir(),'/QQcomparison_Minimal_Input.tiff'),
+    filename = tempfile(pattern = 'QQcomparison_Minimal_Input', fileext = '.tiff'),
     x = list(microarray[1:500,2], microarray[1:500,2]),
     main = 'Minimal input',
-    description = 'QQplot comparison created by BoutrosLab.plotting.general'
+    description = 'QQplot comparison created by BoutrosLab.plotting.general',
+    resolution = 50
     );
 
 # Axes & Labels
 create.qqplot.comparison(
-    filename = paste0(tempdir(),'/QQcomparison_Axes_Labels.tiff'),
+    filename = tempfile(pattern = 'QQcomparison_Axes_Labels', fileext = '.tiff'),
     x = list(microarray[1:500,2], microarray[1:500,2]),
     main = 'Axes & labels',
     # adding axes and labels
@@ -189,7 +190,8 @@ create.qqplot.comparison(
     ylab.cex = 1.5,
     # adding grid for good measure
     add.grid = TRUE,
-    description = 'QQplot comparison created by BoutrosLab.plotting.general'
+    description = 'QQplot comparison created by BoutrosLab.plotting.general',
+    resolution = 100
     );
 
 # Formula input
@@ -207,7 +209,7 @@ qqplot.data <- data.frame(
 
 
 create.qqplot.comparison(
-    filename = paste0(tempdir(),'/QQcomparison_Formula.tiff'),
+    filename = tempfile(pattern = 'QQcomparison_Formula', fileext = '.tiff'),
     # Using a different input method
     x = sample ~ value,
     data = qqplot.data,
@@ -221,12 +223,14 @@ create.qqplot.comparison(
     xlab.cex = 1.5,
     ylab.cex = 1.5,
     add.grid = TRUE,
-    description = 'QQplot comparison created by BoutrosLab.plotting.general'
+    description = 'QQplot comparison created by BoutrosLab.plotting.general',
+    resolution = 200
     );
 
+\donttest{
 # Groups & Legend
 create.qqplot.comparison(
- filename = paste0(tempdir(),'/QQcomparison_Groups_Legend.tiff'),
+ filename = tempfile(pattern = 'QQcomparison_Groups_Legend', fileext = '.tiff'),
     x = sample ~ value,
     data = qqplot.data,
     # Using fake grouping for the sake of illustration
@@ -257,12 +261,13 @@ create.qqplot.comparison(
         y = 0.95,
         padding.text = 2
         ),
-    description = 'QQplot comparison created by BoutrosLab.plotting.general'
+    description = 'QQplot comparison created by BoutrosLab.plotting.general',
+    resolution = 200
     );
 
 # Multiple qq plots
 create.qqplot.comparison(
-    filename = paste0(tempdir(),'/QQcomparison_Multiple.tiff'),
+    filename = tempfile(pattern = 'QQcomparison_Multiple', fileext = '.tiff'),
     x = sample ~ value | chr,
     data = qqplot.data,
     main = 'Multiple plots',
@@ -271,12 +276,13 @@ create.qqplot.comparison(
     xlab.cex = 1.5,
     ylab.cex = 1.5,
     add.grid = TRUE,
-    description = 'QQplot comparison created by BoutrosLab.plotting.general'
+    description = 'QQplot comparison created by BoutrosLab.plotting.general',
+    resolution = 200
     );
 
 # Nature style
 create.qqplot.comparison(
-    filename = paste0(tempdir(),'/QQcomparison_Nature_style.tiff'),
+    filename = tempfile(pattern = 'QQcomparison_Nature_style', fileext = '.tiff'),
     x = sample ~ value,
     data = qqplot.data,
     main = 'Nature style',
@@ -293,7 +299,8 @@ create.qqplot.comparison(
     # demonstrating how to create en-dashes
     xlab.label = expression(paste('en dashs: 1','\u2013', '10'^'\u2013', ''^3)),
 
-    description = 'QQplot comparison created by BoutrosLab.plotting.general'
+    description = 'QQplot comparison created by BoutrosLab.plotting.general',
+    resolution = 200
     );
 }
 }

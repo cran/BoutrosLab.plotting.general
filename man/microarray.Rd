@@ -22,9 +22,8 @@
 \author{Christine P'ng}
 
 \examples{
-\dontrun{
 create.dotmap(
-    filename = paste0(tempdir(),'/Using_microarray_dataset.tiff'),
+    filename = tempfile(pattern = 'Using_microarray_dataset', fileext = '.tiff'),
     x = microarray[1:5,1:5],
     main = 'microarray data',
     spot.size.function = function(x) {abs(x)/3;},
@@ -34,5 +33,5 @@ create.dotmap(
     description = 'Dotmap created by BoutrosLab.plotting.general'
     );
 }
-}
+
 \keyword{datasets}

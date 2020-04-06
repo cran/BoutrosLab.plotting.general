@@ -13,7 +13,7 @@
 \usepackage{sectsty}
 \usepackage{graphicx}
 \usepackage{titlesec}
-\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
+\titlespacing{\subsubsection}{0pt}{\parskip}{\parskip}
 
 \sectionfont{\LARGE}
 \usepackage[super,comma]{natbib}
@@ -2249,7 +2249,6 @@ The spiral.sunrise, spiral.dusk, etc colour schemes were created by ``spiralling
 
 \subsection{Text}
 \begin{itemize}
-\item \texttt{append.footnote} adds text to plots
 \item \texttt{scientific.notation} function formats numbers into scientific notation
 \item \texttt{display.statistical.result} function uses this to display statistical results in plots
 \item \texttt{get.line.breaks} is used in the specific case of placing indices in heatmaps

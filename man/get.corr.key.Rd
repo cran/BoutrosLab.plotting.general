@@ -38,8 +38,6 @@ get.corr.key(
 \keyword{xyplot}
 \seealso{xyplot, plotmath}
 \examples{
-
-\dontrun{
 # create some temporary data
 tmp.data <- data.frame(
     x = c(
@@ -58,7 +56,7 @@ tmp.data <- data.frame(
 BoutrosLab.plotting.general::create.scatterplot(
     formula = y ~ x,
     data = tmp.data,
-    filename = paste0(tempdir(),'/get.corr.key-scatterplot.tiff'),
+    filename = tempfile(pattern = 'get.corr.key-scatterplot', fileext = '.tiff'),
     xlab.label = 'X Axis Title',
     ylab.label = 'Y Axis Title',
     xlimits = c(0,100),
@@ -73,6 +71,7 @@ BoutrosLab.plotting.general::create.scatterplot(
         )
     );
 
+\donttest{
 # compare beta1 vs a robust estimate of the slope
 
 # add an outlier
@@ -81,7 +80,7 @@ tmp.data <- rbind(tmp.data, c(2000,100));
 BoutrosLab.plotting.general::create.scatterplot(
     formula = y ~ x,
     data = tmp.data,
-    filename = paste0(tempdir(),'/get.corr.key.robust-scatterplot.tiff'),
+    filename = tempfile(pattern = 'get.corr.key.robust-scatterplot', fileext = '.tiff'),
     xlab.label = 'X Axis Title',
     ylab.label = 'Y Axis Title',
     xlimits = c(0,100),
@@ -95,6 +94,7 @@ BoutrosLab.plotting.general::create.scatterplot(
         label.items = c('beta1', 'beta1.robust','beta1.p','beta1.robust.p')
         )
     );
-}
+
 # see create.scatterplot for an example of creating multiple keys using legends
+}
 }

@@ -50,5 +50,5 @@ dist <- function(x, method="euclidean", diag=FALSE, upper=FALSE, p=2)
         list(Size = N, Labels =  dimnames(x)[[1L]], Diag = diag,
              Upper = upper, method = METHODS[method],
              call = match.call(), class = "dist")
-    .Call("Cdist", x, method, attrs, p, package="BoutrosLab.plotting.general")
+    .Call("Cdist", x, method, attrs, p, PACKAGE = "BoutrosLab.plotting.general")
 }

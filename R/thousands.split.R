@@ -41,7 +41,7 @@ thousands.split <- function(nums) {
 					}
 				}
 			}
-		to.return[[k]] <- final.str;
+		to.return[k] <- final.str;
 		}
 	return(to.return);
 	}
