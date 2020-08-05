@@ -1,4 +1,4 @@
-a5d23f729b59b44714c41459a23f3b24 *DESCRIPTION
+f45ff1191f719bea73b3bc4cf78a00d6 *DESCRIPTION
 68b974d6610effffaecd8159b87e7e4d *NAMESPACE
 f6a650cab99e7cea17692cd64d77ca17 *NEWS
 8dcdf1c1a6a256bfc17219a9f5ddf276 *R/auto.axis.R
@@ -46,13 +46,13 @@ bc309228abd08136b35d45d859ee4e42 *R/get.line.breaks.R
 f17e700dde3dee2d50476252582fed08 *R/write.metadata.R
 ab76ae08e5877e139e09994e0bcf6eb1 *R/write.plot.R
 c557ef69b427d0611c89372bfb9d35df *TODO
-03bbdfb6845a0621ebf37ac874e1ec61 *build/vignette.rds
+b211c6f9a6698e2151874873269d8cbd *build/vignette.rds
 43121178ba7bd1a17d4c74cd7b582f5e *data/CNA.rda
 0bc523c105bea5050e6ab5368697ed09 *data/SNV.rda
 b6763f0a9eb9119521793935bbaad66f *data/microarray.rda
 1a1d8eda8ea30582c9c739dd971f3fd0 *data/patient.rda
-6fb768a010894f005889ff249fb92543 *inst/doc/PlottingGuide.Rnw
-a001350623eb6ee81d919c79732a4c31 *inst/doc/PlottingGuide.pdf
+d9e90ea20da435ae88a105b0d4eb9c96 *inst/doc/PlottingGuide.Rnw
+0bac99340cc13f5eb4563a82166df39e *inst/doc/PlottingGuide.pdf
 fa5d8d13ddbb96e6fc27eed76aaebd63 *inst/ext2function.txt
 b86be1992d29bfb85f096a48faafab9a *inst/optimal.heatmap.cex.txt
 34a44012c2b430a0ac105950c00df1f3 *inst/scripts/test_greyscale.R
@@ -80,7 +80,7 @@ e3c31ba3554418ab4090f85e1b15f0ad *man/create.dotmap.Rd
 5828273d172e96712e8c06c7a45e6f2e *man/create.qqplot.comparison.Rd
 e5766b6b54ebb7264dbf4286910dadc1 *man/create.qqplot.fit.Rd
 47693a58d2d829333097b219ef056dab *man/create.qqplot.fit.confidence.interval.Rd
-62a0e7d460eb96889823a17be60c5306 *man/create.scatterplot.Rd
+c564bb4f577d43c7455aff0ebc040faf *man/create.scatterplot.Rd
 c892ba9c6efd3e5e0c92302070d9c798 *man/create.segplot.Rd
 377dccda78443b7a7bd64e4ce41bd198 *man/create.stripplot.Rd
 0e654581f460d06877ac0bc23151def0 *man/create.violinplot.Rd
@@ -118,4 +118,4 @@ a046af75d68fa7fac823d5c307a42178 *src/ts.h
 db41b5c83b1e8b3dcb10a8e3a25a64e7 *vignettes/Figures/colour_wheel.png
 d937aadf7bcc8736c2e002e76edce5b6 *vignettes/Figures/ex2_schematic.pdf
 08e481e16cf4fa717ac5e8f1144c9262 *vignettes/Figures/intro_plotting_ex.png
-6fb768a010894f005889ff249fb92543 *vignettes/PlottingGuide.Rnw
+d9e90ea20da435ae88a105b0d4eb9c96 *vignettes/PlottingGuide.Rnw
