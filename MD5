@@ -1,6 +1,6 @@
-f45ff1191f719bea73b3bc4cf78a00d6 *DESCRIPTION
+32f914dca58d4f7533501c2c1baed19b *DESCRIPTION
 68b974d6610effffaecd8159b87e7e4d *NAMESPACE
-f6a650cab99e7cea17692cd64d77ca17 *NEWS
+49aff787f98dde9ebb738c9dae063b3a *NEWS
 8dcdf1c1a6a256bfc17219a9f5ddf276 *R/auto.axis.R
 0a1af8b070e1361db1f040331a3c41cc *R/colour.gradient.R
 41029b4eae83b2e6106ba2e07489a0bd *R/covariates.grob.R
@@ -15,7 +15,7 @@ ca5580ecbb07e855f41d17302601f3b1 *R/create.gif.R
 63d24902a85f2c061726821b85cc821a *R/create.hexbinplot.R
 d7454b321cacc1c0d0a43fe9681b9b1f *R/create.histogram.R
 a6b7cb24d1fa7ac9a39213444903eaf3 *R/create.manhattanplot.R
-9424f0ae782fb2814f09bba3a00c7152 *R/create.multipanelplot.R
+a4896017679e287aefb41e07e56e2f0d *R/create.multipanelplot.R
 0964ecd8e391dc5c359621f05192d000 *R/create.multiplot.R
 55f883e362705b01049148c80ec7fd6a *R/create.polygonplot.R
 4a24beb3b067b3aa76e046ca3d306c12 *R/create.qqplot.comparison.R
@@ -35,7 +35,7 @@ a4f7ef94c3de935fcb5fd1c66d05dd27 *R/get.corr.key.R
 e5c0435ebbcbf0aec631c9d73348e20e *R/get.correlation.p.and.corr.R
 48a438bab5f11d46ea31ed8ea6e6be61 *R/get.defaults.R
 bc309228abd08136b35d45d859ee4e42 *R/get.line.breaks.R
-15430af73ec750e8e58654562722bee5 *R/inside.auto.legend.R
+1465a25a9e5b55524a593d6d52a9e365 *R/inside.auto.legend.R
 4e7303649645d716bc59094d0c826c18 *R/ks.test.critical.value.R
 282f2e38f54a2e459261921d7b0c0306 *R/legend.grob.R
 3a1dc4e600e59b9d290ad9663b6ab7a1 *R/pcawg.colours.R
@@ -44,7 +44,7 @@ bc309228abd08136b35d45d859ee4e42 *R/get.line.breaks.R
 8f1f6635d772cbfda0c1f53780f98547 *R/show.available.palettes.R
 2d84d873700841ea530633f989045cd8 *R/thousands.split.R
 f17e700dde3dee2d50476252582fed08 *R/write.metadata.R
-ab76ae08e5877e139e09994e0bcf6eb1 *R/write.plot.R
+836b12ae4be8c2887b9a7d470b475459 *R/write.plot.R
 c557ef69b427d0611c89372bfb9d35df *TODO
 b211c6f9a6698e2151874873269d8cbd *build/vignette.rds
 43121178ba7bd1a17d4c74cd7b582f5e *data/CNA.rda
@@ -52,7 +52,7 @@ b211c6f9a6698e2151874873269d8cbd *build/vignette.rds
 b6763f0a9eb9119521793935bbaad66f *data/microarray.rda
 1a1d8eda8ea30582c9c739dd971f3fd0 *data/patient.rda
 d9e90ea20da435ae88a105b0d4eb9c96 *inst/doc/PlottingGuide.Rnw
-0bac99340cc13f5eb4563a82166df39e *inst/doc/PlottingGuide.pdf
+cf2b1b8478a3ad5444976778eca75984 *inst/doc/PlottingGuide.pdf
 fa5d8d13ddbb96e6fc27eed76aaebd63 *inst/ext2function.txt
 b86be1992d29bfb85f096a48faafab9a *inst/optimal.heatmap.cex.txt
 34a44012c2b430a0ac105950c00df1f3 *inst/scripts/test_greyscale.R
