@@ -1,6 +1,6 @@
-32f914dca58d4f7533501c2c1baed19b *DESCRIPTION
+bdeef20295cdcb8e1dfb40a7b046df56 *DESCRIPTION
 68b974d6610effffaecd8159b87e7e4d *NAMESPACE
-49aff787f98dde9ebb738c9dae063b3a *NEWS
+b378c779af2f1f8b44daa011c730202a *NEWS
 8dcdf1c1a6a256bfc17219a9f5ddf276 *R/auto.axis.R
 0a1af8b070e1361db1f040331a3c41cc *R/colour.gradient.R
 41029b4eae83b2e6106ba2e07489a0bd *R/covariates.grob.R
@@ -52,7 +52,7 @@ b211c6f9a6698e2151874873269d8cbd *build/vignette.rds
 b6763f0a9eb9119521793935bbaad66f *data/microarray.rda
 1a1d8eda8ea30582c9c739dd971f3fd0 *data/patient.rda
 d9e90ea20da435ae88a105b0d4eb9c96 *inst/doc/PlottingGuide.Rnw
-cf2b1b8478a3ad5444976778eca75984 *inst/doc/PlottingGuide.pdf
+d3742d344238848cf0d87cc651bc395a *inst/doc/PlottingGuide.pdf
 fa5d8d13ddbb96e6fc27eed76aaebd63 *inst/ext2function.txt
 b86be1992d29bfb85f096a48faafab9a *inst/optimal.heatmap.cex.txt
 34a44012c2b430a0ac105950c00df1f3 *inst/scripts/test_greyscale.R
@@ -61,7 +61,7 @@ b86be1992d29bfb85f096a48faafab9a *inst/optimal.heatmap.cex.txt
 f535f04d4d34c58e0dbd9db0e2718205 *man/SNV.Rd
 1e742e94c8960bcd3fa43e5a6479c610 *man/auto.axis.Rd
 21c4abc319e7d94705f7bad161d1b433 *man/colour.gradient.Rd
-bec0527df5b34757ecf7405ded54e407 *man/covariates.grob.Rd
+607e6e8b5fc2f3ad47d4d013689b465b *man/covariates.grob.Rd
 4d002aa09ff423ee313874b49fb87339 *man/create.barplot.Rd
 042c14d299b0dcd738f81c9481921f90 *man/create.boxplot.Rd
 7657e0287aa747d7b3c6c9a47f855644 *man/create.colourkey.Rd
@@ -95,7 +95,7 @@ f8923616766a555dfe886d6318eab2cb *man/generate.at.final.Rd
 a78c33d683d2e6a64949a388a00ff1ad *man/get.defaults.Rd
 cfe04ce8a4f275ca395c3f07fb6eb06d *man/get.line.breaks.Rd
 693ce6f0d05596e5cfad89358894b6f7 *man/ks.test.critical.value.Rd
-291a4faf1e13ae158b7d9f3e5ead47db *man/legend.grob.Rd
+bb3965744b5a74a790e4f30ef865beea *man/legend.grob.Rd
 3f6a8ac76288937a131024a5635b60f2 *man/microarray.Rd
 95e0cfc6419a8dd298142d6a7f3a9c9a *man/panel.BL.bwplot.Rd
 265d094d4c7f88c4cb4d3de3a1aebdb9 *man/patient.Rd

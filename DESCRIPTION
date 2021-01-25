@@ -1,8 +1,8 @@
 Package: BoutrosLab.plotting.general
-Version: 6.0.2
+Version: 6.0.3
 Type: Package
 Title: Functions to Create Publication-Quality Plots
-Date: 2021-01-04
+Date: 2021-01-24
 Authors@R: c(person("Paul Boutros", role = c("aut", "cre"), email = "PBoutros@mednet.ucla.edu"),
              person("Christine P'ng", role = "ctb"),
              person("Jeff Green", role = "ctb"),
@@ -24,7 +24,7 @@ LazyLoad: yes
 LazyData: yes
 VignetteBuilder: knitr
 NeedsCompilation: yes
-Packaged: 2021-01-04 17:20:23 UTC; root
+Packaged: 2021-01-25 06:41:07 UTC; root
 Author: Paul Boutros [aut, cre],
   Christine P'ng [ctb],
   Jeff Green [ctb],
@@ -36,4 +36,4 @@ Author: Paul Boutros [aut, cre],
   Ross Ihaka [ctb],
   Caden Bugh [ctb]
 Repository: CRAN
-Date/Publication: 2021-01-12 00:30:02 UTC
+Date/Publication: 2021-01-25 11:40:12 UTC
