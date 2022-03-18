@@ -1,3 +1,42 @@
+BoutrosLab.plotting.general 7.0.3 2022-03-15
+
+BUG
+* Update .Rbuildignore to match lab R standards
+
+--------------------------------------------------------------------------
+BoutrosLab.plotting.general 7.0.2 2022-03-07
+
+BUG
+* Add type comparisons for class name comparisons
+
+--------------------------------------------------------------------------
+BoutrosLab.plotting.general 7.0.1 2022-03-03
+
+BUG
+* Fix object protection issue in distance.c
+
+-------------------------------------------------------------------------- 
+BoutrosLab.plotting.general 7.0.0 2022-02-15
+
+UPDATE
+* Renamed ks.test.critical.value() function to critical.value.ks.test()
+  to resolve naming conflict with S3 generic ks.test() from base R stats
+  package.
+
+BUG
+* Fix issue when specifying multiple line-widths in create.polygonplot()
+
+-------------------------------------------------------------------------- 
+BoutrosLab.plotting.general 6.1.0 2021-10-26
+
+UPDATE
+* Add option to use dots in a legend instead of default rectangles
+* Enable create.boxplot to print different text label on each panel
+
+BUG
+* Fixed inconsistent grouping of point colours in create.boxplot
+* Account for case where only one colour is passed to create.heatmap
+
 --------------------------------------------------------------------------
 BoutrosLab.plotting.general 6.0.3 2021-01-24
 
