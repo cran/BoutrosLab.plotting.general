@@ -1,6 +1,27 @@
-BoutrosLab.plotting.general 7.0.3 2022-03-15
+BoutrosLab.plotting.general 7.0.5 2023-01-03
+
+UPDATE
+* Fix typo in man/create.violinplot.Rd
+* Add alpha parameter to create.boxplot
+* Added GitHub repo to package description
+* Correctly sort horizontal barplot
+* Remove Makefile
+* Replaced string class comparison with is()
 
 BUG
+* Fix NEWS format
+* Fix bug with persisted plotting function output in examples
+
+--------------------------------------------------------------------------
+BoutrosLab.plotting.general 7.0.4 2022-08-17
+
+UPDATE
+* Fix border specification in create.polygonplot
+
+--------------------------------------------------------------------------
+BoutrosLab.plotting.general 7.0.3 2022-03-15
+
+UPDATE
 * Update .Rbuildignore to match lab R standards
 
 --------------------------------------------------------------------------
@@ -15,7 +36,7 @@ BoutrosLab.plotting.general 7.0.1 2022-03-03
 BUG
 * Fix object protection issue in distance.c
 
--------------------------------------------------------------------------- 
+--------------------------------------------------------------------------
 BoutrosLab.plotting.general 7.0.0 2022-02-15
 
 UPDATE
@@ -26,7 +47,7 @@ UPDATE
 BUG
 * Fix issue when specifying multiple line-widths in create.polygonplot()
 
--------------------------------------------------------------------------- 
+--------------------------------------------------------------------------
 BoutrosLab.plotting.general 6.1.0 2021-10-26
 
 UPDATE
@@ -41,7 +62,7 @@ BUG
 BoutrosLab.plotting.general 6.0.3 2021-01-24
 
 UPDATE
-* Only use cairo in the examples for covariates.grob and legend.grob 
+* Only use cairo in the examples for covariates.grob and legend.grob
   if capabilities('cairo') is true.
 
 --------------------------------------------------------------------------
@@ -97,13 +118,13 @@ REMOVED
 BoutrosLab.plotting.general 5.9.8 2018-10-16
 
 FEATURE
-# create.hexbinplot: added option to modify the default legend title
+* create.hexbinplot: added option to modify the default legend title
 
 --------------------------------------------------------------------------
 BoutrosLab.plotting.general 5.9.7 2018-09-19
 
 BUG
-# fixed an issue regarding warning detection for class of conditioning variable that didn't recognize character input (barplot, boxplot, hexbinplot, scatterplot)
+* fixed an issue regarding warning detection for class of conditioning variable that didn't recognize character input (barplot, boxplot, hexbinplot, scatterplot)
 
 --------------------------------------------------------------------------
 BoutrosLab.plotting.general 5.9.6 2018-07-24
@@ -129,7 +150,7 @@ REMOVED
 BoutrosLab.plotting.general 5.9.4 2018-04-18
 
 FEATURE
-* dotmap can now do symmetrical removing of top left half of dotmap 
+* dotmap can now do symmetrical removing of top left half of dotmap
 
 BUG
 * top covariates in heatmap now have proper defaults
@@ -141,7 +162,7 @@ BoutrosLab.plotting.general 5.9.3 2018-04-18
 FEATURE
 * updated dependencies to not include as many
 * boxplot now saves all its data (for later use)
-* multipanelplot now saves temp plots to temp dir 
+* multipanelplot now saves temp plots to temp dir
 
 BUG
 * Default.colours no longer references wrong grey scale colour
@@ -163,7 +184,7 @@ FEATURE
 * Multipanel plot now uses tob axis labels too for lining up plots
 
 BUG
-* Multipanel plot now correctly positions plot main labels 
+* Multipanel plot now correctly positions plot main labels
 
 --------------------------------------------------------------------------
 
@@ -194,7 +215,7 @@ BoutrosLab.plotting.general 5.8.14 2018-03-09
 FEATURE
 * now stores data on the mount
 
-BUG 
+BUG
 * text now passed to panel in seperate list, stopping it from being reset in between plots
 
 --------------------------------------------------------------------------
@@ -234,7 +255,7 @@ FEATURE
 * added inside legend auto finder code
 
 BUG
-* boxplot addstriplot colour was having issue with multiple boxplots, now works properly 
+* boxplot addstriplot colour was having issue with multiple boxplots, now works properly
 
 --------------------------------------------------------------------------
 
@@ -308,7 +329,7 @@ FEATURE
 BoutrosLab.plotting.general 5.8.2 2017-08-11
 
 BUG FIX
-* Completely reworked how spacing works in multipanel plot -- now creates rectangular grobs instead of using top/left/right/bottom padding 
+* Completely reworked how spacing works in multipanel plot -- now creates rectangular grobs instead of using top/left/right/bottom padding
 
 
 --------------------------------------------------------------------------
@@ -382,7 +403,7 @@ BoutrosLab.plotting.general 5.7.4 2017-07-19
 BUG FIX
 * Automatic labels not working for stacked barplots
 * removed log scaling from stacked barplots
-* fixed 1 D heatmap issues 
+* fixed 1 D heatmap issues
 
 ADDITIONS
 * search metadata function
@@ -405,7 +426,7 @@ FEATURE UPDATE
 * Issues around multiplot reseting labels on y axis when x asis labels added solved
 
 ADDITIONS
-* create.gif for creating animated plots 
+* create.gif for creating animated plots
 
 --------------------------------------------------------------------------
 BoutrosLab.plotting.general 5.7.1 2017-05-17
@@ -447,21 +468,21 @@ MINOR (FORMATTING) CHANGES
 BoutrosLab.plotting.general 5.6.24 2017-04-20
 
 FEATURE UPDATE
-*create.multiplot: Added functionality to add top x-axis tick labels. Has not been extensively tested. 
+*create.multiplot: Added functionality to add top x-axis tick labels. Has not been extensively tested.
 
 --------------------------------------------------------------------------
 
 BoutrosLab.plotting.general 5.6.23 2017-02-09
 
-BUG FIX 
-*pcawg.colours: fixed bug that prevented project code colours from being returned. 
+BUG FIX
+*pcawg.colours: fixed bug that prevented project code colours from being returned.
 
 --------------------------------------------------------------------------
 
 BoutrosLab.plotting.general 5.6.22 2017-02-09
 
 FEATURE UPDATE
-*create.dotmap: addition of parameters for rectangle border thickness, rectangle border colour. 
+*create.dotmap: addition of parameters for rectangle border thickness, rectangle border colour.
 
 --------------------------------------------------------------------------
 
@@ -469,7 +490,7 @@ BoutrosLab.plotting.general 5.6.21 2017-01-30
 
 BUG FIX
 * create.scatterplot: adding conditional for when pch is not referring
-to a point (this is in reference to KM plots)
+  to a point (this is in reference to KM plots)
 
 --------------------------------------------------------------------------
 
@@ -477,7 +498,7 @@ BoutrosLab.plotting.general 5.6.20 2017-01-28
 
 FEATURE UPDATE
 * create.scatterplot: addition of parameter "col.border".
-This allows customizable border colours when pch >= 21.
+  This allows customizable border colours when pch >= 21.
 
 --------------------------------------------------------------------------
 
@@ -610,17 +631,17 @@ FEATURE UPDATE
 BoutrosLab.plotting.general 5.4.3 2016-01-04
 
 BUG FIXES:
-Inconsitency in dotmap/heatmap grid lines location fixed -> everything follows heatmaps spec now
-fixed bug where sample.order would reorde barplots incorrectly when horizontal
-default font sizes are consistent now
-default font sizes are more porportional
+* Inconsitency in dotmap/heatmap grid lines location fixed -> everything follows heatmaps spec now
+  fixed bug where sample.order would reorde barplots incorrectly when horizontal
+* default font sizes are consistent now
+* default font sizes are more proportional
 
 FEATURE UPDATES:
-ability to add multiple violin fill colours
-able to completely remove borders from heatmaps
-add p values automatically to box plots
-ability to set a sperate set of defaults based on type of publication ( default sets still need to be added)
-ability to pick what plots to retrieve plot labels from in create.multiplot
+* ability to add multiple violin fill colours
+* able to completely remove borders from heatmaps
+* add p values automatically to box plots
+* ability to set a sperate set of defaults based on type of publication ( default sets still need to be added)
+* ability to pick what plots to retrieve plot labels from in create.multiplot
 
 --------------------------------------------------------------------------
 
@@ -641,27 +662,28 @@ FEATURE UPDATE:
 BoutrosLab.plotting.general 5.3.7
 
 BUG FIXES:
-same.as.matrix will now correcting readjust label specifications
-when combining scatterplots, they will no longer only use error bars from one scatter plot
-yaxis.covariates parameter can now allow specific location specification so it does not overlap the heatmap
-xgrid.at and ygrid.at now properly update for all functions
-background rectangles are now drawn in the background instead of foreground
-when combining scatterplots, they will no longer only use the text specified from one scatter plot
-removed circular definitions from Rd files
-standardized parameter defaults
+* same.as.matrix will now correcting readjust label specifications
+* when combining scatterplots, they will no longer only use error bars from one scatter plot
+* yaxis.covariates parameter can now allow specific location specification so it does not overlap the heatmap
+* xgrid.at and ygrid.at now properly update for all functions
+* background rectangles are now drawn in the background instead of foreground
+* when combining scatterplots, they will no longer only use the text specified from one scatter plot
+* removed circular definitions from Rd files
+* standardized parameter defaults
 
 FEATURE UPDATES:
-Can now add subtitles through use of xaxis.top parameters
-Can now input a vector of files to be output to
-Can now sort boxes in create.boxplot by max, min, mean and median (defaults to median if not set)
-Can now draw both bands and lines on segplots
-Polygon plot will now auto-calculate x and y limits if not specified
-Can now vertically align labels and adjust there coordinates manually
+* Can now add subtitles through use of xaxis.top parameters
+* Can now input a vector of files to be output to
+* Can now sort boxes in create.boxplot by max, min, mean and median (defaults to median if not set)
+* Can now draw both bands and lines on segplots
+* Polygon plot will now auto-calculate x and y limits if not specified
+* Can now vertically align labels and adjust there coordinates manually
 
 BoutrosLab.plotting.general 5.3.4 2015-07-31
 
 MINOR UPDATE:
 * create.scatterplot: updated ROC example to use auto-label placement
+
 ---------------------------------------------------------------------------
 BoutrosLab.plotting.general 5.3.3 2015-07-28
 
@@ -824,11 +846,11 @@ BoutrosLab.plotting.general 5.1.0 2014-08-12
 
 MINOR UPDATE
 * create.scatterplot: NEW ARGUMENTS text.guess.* now allows users to specify data points so that
-associated label positions can be automatically determined
+  associated label positions can be automatically determined
 * inside.rectangle: NEW FUNCTION which determines if a set of data points are inside a set of defined
-rectangles
+  rectangles
 * inside.ellipse: NEW FUNCTION which determines if a set of data points are inside a set of defined
-ellipses
+  ellipses
 ---------------------------------------------------------------------------------------------------
 BoutrosLab.plotting.general 5.0.28 2014-08-08
 
@@ -849,7 +871,7 @@ BoutrosLab.plotting.general 5.0.25 2014-07-31
 
 MINOR UPDATE
 * create.heatmap: NEW ARGUMENT gridline.order now allows user to specify in which order
-gridlines should be drawn (horizontal or vertical first)
+  gridlines should be drawn (horizontal or vertical first)
 ---------------------------------------------------------------------------------------------------
 BoutrosLab.plotting.general 5.0.24 2014-07-31
 
@@ -3544,4 +3566,5 @@ MAJOR UPDATES
 * Initialized package for plotting functions
 * create.violin.plot: Added function to create violin plots
 ---------------------------------------------------------------------------------------------------
+
 
