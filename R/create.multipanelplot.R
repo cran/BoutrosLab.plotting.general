@@ -2,26 +2,17 @@
 ### This is needed because without it, the returned object is a grob which you must call grid.draw(x) on, this way, we can simply print the object.
 
 print.multipanel <- function(x, ...) {
-	## set class to that of a grid object
-	class(x) <- c('frame', 'gTree', 'grob', 'gDesc');
-	## close previous items if exist
-	if (!is.null(dev.list()) && length(unlist(grid.ls(print = FALSE))) > 0) {
-		grid.remove(grid.ls(print = FALSE)$name[1], redraw = TRUE);
-		}
-	## draw the plot like a grob
-  	grid.draw(x);
-	}
+    ## set class to that of a grid object
+    class(x) <- c('frame', 'gTree', 'grob', 'gDesc');
+    ## close previous items if exist
+    if (!is.null(dev.list()) && length(unlist(grid.ls(print = FALSE))) > 0) {
+        grid.remove(grid.ls(print = FALSE)$name[1], redraw = TRUE);
+        }
+    ## draw the plot like a grob
+      grid.draw(x);
+    }
 
-plot.multipanel <- function(x, ...) {
-	## set class to that of a grid object
-	class(x) <- c('frame', 'gTree', 'grob', 'gDesc');
-	## close previous items if exist
-	if (!is.null(dev.list()) && length(unlist(grid.ls(print = FALSE))) > 0) {
-		grid.remove(grid.ls(print = FALSE)$name[1], redraw = TRUE);
-		}
-	## draw the plot like a grob
-  	grid.draw(x);
-	}
+plot.multipanel <- print.multipanel
 
 create.multipanelplot <- function(plot.objects = NULL, filename = NULL, height = 10, width = 10, resolution = 1000,
 	plot.objects.heights = c(rep(1, layout.height)), plot.objects.widths = c(rep(1, layout.width)), layout.width = 1,
@@ -61,7 +52,8 @@ create.multipanelplot <- function(plot.objects = NULL, filename = NULL, height =
 		stop('xlab.axis.padding must be the same size as layout.height');
 		}
 
-
+    if (is.null(ylab.label)) ylab.label <- ''
+    if (is.null(xlab.label)) xlab.label <- ''
 
 	padding.text.to.padding.ratio <- 6.04; # this is used to align plots with diffrent label sizes
   	tick.to.padding.ratio <- 0.9484252; # this is used to evaluate length of ticks (is equivalent to 1mm)
@@ -314,7 +306,7 @@ create.multipanelplot <- function(plot.objects = NULL, filename = NULL, height =
 
 				plot.objects[[j]]$par.settings$layout.heights$axis.xlab.padding <- xlab.axis.padding[ceiling(i / (layout.width * 2))] + to.add;
 
-				if (max.main != 0 && (is.null(plot.objects[[j]]$main$label) || plot.objects[[j]]$main$label == '')) {
+				if (max.main != 0 && (is.null(plot.objects[[j]]$main$label) || nchar(plot.objects[[j]]$main$label) == 0)) {
 					plot.objects[[j]]$main$label <- '\t'; #make sure it thinks a label is there
 					}
 
@@ -377,7 +369,7 @@ create.multipanelplot <- function(plot.objects = NULL, filename = NULL, height =
 
     		width.text <- 0;
 
-		if (ylab.label != '') {
+		if (nchar(ylab.label) > 0) {
 			width.text <- convertUnit(
 				grobWidth(y.label),
 				unitTo = 'lines',
@@ -429,7 +421,7 @@ create.multipanelplot <- function(plot.objects = NULL, filename = NULL, height =
 	else {
 
     		width.text <- 0;
-		if (ylab.label != '') {
+		if (nchar(ylab.label) > 0) {
 			width.text <- convertUnit(
 				grobWidth(y.label),
 				unitTo = 'lines',
@@ -482,7 +474,7 @@ create.multipanelplot <- function(plot.objects = NULL, filename = NULL, height =
 			);
 
     		width.text <- 0;
-		if (ylab.label.right != '') {
+		if (nchar(ylab.label.right) > 0) {
 			width.text <- convertUnit(
 				grobWidth(y.label.right),
 				unitTo = 'lines',
@@ -532,7 +524,7 @@ create.multipanelplot <- function(plot.objects = NULL, filename = NULL, height =
 	else {
 
     		width.text <- 0;
-		if (ylab.label.right != '') {
+		if (nchar(ylab.label.right) > 0) {
 			width.text <- convertUnit(
 				grobWidth(y.label.right),
 				unitTo = 'lines',
@@ -585,7 +577,7 @@ create.multipanelplot <- function(plot.objects = NULL, filename = NULL, height =
 			valueOnly = TRUE
 			);
     		height.text <- 0;
-		if (xlab.label != '') {
+		if (nchar(xlab.label) > 0) {
 			height.text <- convertUnit(
 				grobHeight(x.label),
 				unitTo = 'lines',
@@ -635,7 +627,7 @@ create.multipanelplot <- function(plot.objects = NULL, filename = NULL, height =
 	else {
 
     		height.text <- 0;
-		if (xlab.label != '') {
+		if (nchar(xlab.label) > 0) {
 			height.text <- convertUnit(
 				grobHeight(x.label),
 				unitTo = 'lines',
@@ -688,7 +680,7 @@ create.multipanelplot <- function(plot.objects = NULL, filename = NULL, height =
 			valueOnly = TRUE
 			);
     		height.text <- 0;
-		if (main != '') {
+		if (nchar(main) > 0) {
 			height.text <- convertUnit(
 				grobHeight(main.label),
 				unitTo = 'lines',
@@ -737,7 +729,7 @@ create.multipanelplot <- function(plot.objects = NULL, filename = NULL, height =
 		}
 	else {
 		height.text <- 0;
-		if (main != '') {
+		if (nchar(main) > 0) {
 			height.text <- convertUnit(
 				grobHeight(main.label),
 				unitTo = 'lines',

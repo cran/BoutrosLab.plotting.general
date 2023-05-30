@@ -1,3 +1,42 @@
+BoutrosLab.plotting.general 7.0.8 2023-05-26
+
+UPDATE
+* Change name of print.to.file() to export.to.file() to avoid naming conflict
+  with S3 method print()
+
+--------------------------------------------------------------------------
+BoutrosLab.plotting.general 7.0.7 2023-05-25
+
+UPDATE
+* Expose panel.text arguments for text.above.bar options in create.barplot
+* Remove duplicated code in print.multipanel
+* Update format of CRAN links
+
+BUG
+* Add default label locations for continuous legends
+* Fix error with expressions in main for multipanelplots
+
+REMOVED
+* Remove outdated plotting data storage code
+
+--------------------------------------------------------------------------
+BoutrosLab.plotting.general 7.0.6 2023-02-15
+
+UPDATE
+* Move CICD workflow from Dockerhub to GitHub packages
+* Add github PR template
+
+UPDATE
+* Add text support for create.histogram
+
+UPDATE
+* Remove axis labels with axis.lab = NULL in create.boxplot for consistent behavior with other plot types
+
+BUG
+* Fix ylab.axis.padding parameter in create.histogram
+* Fix error when using expressions in multipanelplot labels and main
+
+--------------------------------------------------------------------------
 BoutrosLab.plotting.general 7.0.5 2023-01-03
 
 UPDATE
