@@ -1,8 +1,8 @@
 Package: BoutrosLab.plotting.general
-Version: 7.0.8
+Version: 7.0.10
 Type: Package
 Title: Functions to Create Publication-Quality Plots
-Date: 2023-05-26
+Date: 2023-10-09
 Authors@R: c(person("Paul Boutros", role = c("aut", "cre"), email = "PBoutros@mednet.ucla.edu"),
              person("Christine P'ng", role = "ctb"),
              person("Jeff Green", role = "ctb"),
@@ -23,13 +23,13 @@ Imports: gridExtra, tools, methods, gtable, e1071, MASS(>= 7.3-29)
 Suggests: Cairo (>= 1.5-1), knitr, testthat
 Description: Contains several plotting functions such as barplots, scatterplots, heatmaps, as well as functions to combine plots and assist in the creation of these plots. These functions will give users great ease of use and customization options in broad use for biomedical applications, as well as general purpose plotting. Each of the functions also provides valid default settings to make plotting data more efficient and producing high quality plots with standard colour schemes simpler. All functions within this package are capable of producing plots that are of the quality to be presented in scientific publications and journals. P'ng et al.; BPG: Seamless, automated and interactive visualization of scientific data; BMC Bioinformatics 2019 <doi:10.1186/s12859-019-2610-2>.
 License: GPL-2
-URL: https://github.com/uclahs-cds/public-R-BoutrosLab-plotting-general
-BugReports: https://github.com/uclahs-cds/public-R-BoutrosLab-plotting-general/issues
+URL: https://github.com/uclahs-cds/package-BoutrosLab-plotting-general
+BugReports: https://github.com/uclahs-cds/package-BoutrosLab-plotting-general/issues
 LazyLoad: yes
 LazyData: yes
 VignetteBuilder: knitr
 NeedsCompilation: yes
-Packaged: 2023-05-26 21:22:27 UTC; root
+Packaged: 2023-10-24 21:31:05 UTC; root
 Author: Paul Boutros [aut, cre],
   Christine P'ng [ctb],
   Jeff Green [ctb],
@@ -44,4 +44,4 @@ Author: Paul Boutros [aut, cre],
   Stefan Eng [ctb],
   Mohammed Faizal Eeman Mootor [ctb]
 Repository: CRAN
-Date/Publication: 2023-05-30 09:10:05 UTC
+Date/Publication: 2023-10-24 23:10:02 UTC
