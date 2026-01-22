@@ -1,3 +1,29 @@
+# BoutrosLab.plotting.general 7.1.5 (2026-01-20)
+
+## Changed
+- Updated maintainer contact info
+
+# BoutrosLab.plotting.general 7.1.4 (2025-06-25)
+
+## Fixed
+- Updated extra points functionality in violin plot to properly set coordinates based on `plot.horizontal`
+- Fixed unicode error in github action R CMD CHECK
+- Comment out `filename` in all help page examples.  This ensures plots are rendered on our website.
+
+## Added
+- `create.violinplot` panel and x-axis arguments
+- Parameterize `title.y.coord` in `legend.grob()`
+
+# BoutrosLab.plotting.general 7.1.3 (2025-06-13)
+
+## Changed
+
+- Update gleason sum colour scheme to include a colour for Gleason Sum of 10.
+- Update `R CMD check` GitHub action
+- Demonstrate file export in plotting function examples
+- Updated extra points functionality in violin plot to properly set coordinates based on `plot.horizontal`
+
+
 # BoutrosLab.plotting.general 7.1.2 (2024-10-02)
 
 ## Changed

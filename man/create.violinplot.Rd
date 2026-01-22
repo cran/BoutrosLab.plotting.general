@@ -36,6 +36,8 @@ create.violinplot(
 	yaxis.rot = 0,
 	xaxis.tck = c(1,0),
 	yaxis.tck = c(1,1),
+	xlimits = NULL,
+	xat = TRUE,
 	ylimits = NULL,
 	yat = TRUE,
 	col = 'black',
@@ -74,7 +76,11 @@ create.violinplot(
 	style = 'BoutrosLab',
 	preload.default = 'custom',
 	use.legacy.settings = FALSE,
-	disable.factor.sorting = FALSE
+	disable.factor.sorting = FALSE,
+	strip.col = 'white',
+	strip.cex = 1,
+	strip.fontface = 'bold',
+	layout = NULL
 	)
 }
 \arguments{
@@ -110,6 +116,8 @@ create.violinplot(
     \item{yaxis.rot}{Rotation of y-axis tick labels; defaults to 0}
     \item{xaxis.tck}{Specifies the length of the tick marks for x-axis, defaults to c(1,0)}
     \item{yaxis.tck}{Specifies the length of the tick marks for y-axis, defaults to c(1,1)}
+    \item{xlimits}{Two-element vector giving the x-axis limits, default is automatic}
+    \item{xat}{Vector listing where the x-axis labels should be drawn, default is automatic}
     \item{ylimits}{Two-element vector giving the y-axis limits, default is automatic}
     \item{yat}{Vector listing where the y-axis labels should be drawn, default is automatic}
     \item{col}{Colour to use for filling the interior of the violin plots, defaults to \dQuote{black}}
@@ -149,6 +157,10 @@ create.violinplot(
     \item{preload.default}{ability to set multiple sets of diffrent defaults depending on publication needs}
     \item{use.legacy.settings}{boolean to set wheter or not to use legacy mode settings (font)}
     \item{disable.factor.sorting}{Disable barplot auto sorting factors alphabetically/numerically}
+    \item{strip.col}{Strip background colour, defaults to \dQuote{white}}
+    \item{strip.cex}{Size of text in Strip titles}
+    \item{strip.fontface}{Strip title fontface, defaults to bold.  1 = plain, 2 = bold, 3 = italics, 4 = bold and italics}
+    \item{layout}{A vector specifying the number of columns, rows (e.g., c(2,1)).}
 }
 \value{If \code{filename} is \code{NULL} then returns the trellis object, otherwise creates a plot and returns a 0/1 success code.}
 \author{Paul C. Boutros}
